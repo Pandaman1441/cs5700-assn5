@@ -4,7 +4,7 @@ class EmailVerifier {
     lateinit var state: EmailState
 
     fun verify(string: String): Boolean {
-        state =
+        state = Start()
             string.chunked(1).forEach {
                 state.consumeCharacter(it, this)
             }

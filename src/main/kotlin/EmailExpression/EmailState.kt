@@ -1,5 +1,5 @@
 package EmailExpression
 
-interface BinaryState {
+interface EmailState {
     fun consumeCharacter(char: String, emailVerifier: EmailVerifier)
 }
