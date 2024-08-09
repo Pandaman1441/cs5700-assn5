@@ -1,11 +1,11 @@
 package PasswordExpression
 
-class ValidPassword : PasswordState{
+class Gate : PasswordState{
     override fun consumeCharacter(char: String, passwordVerifier: PasswordVerifier) {
         when (char) {
-            in "" -> passwordVerifier.state = InvalidPassword()
+            in  "" -> passwordVerifier.state = InvalidPassword()
                 " " -> passwordVerifier.state = InvalidPassword()
-            in  "~!@#$%^&*()_+|}{:?><.,;][=-" -> passwordVerifier.state = Gate()
+                "~!@#$%^&*()_+|}{:?><.,;][=-" -> passwordVerifier.state = Gate()
                 else -> passwordVerifier.state = ValidPassword()
         }
     }
